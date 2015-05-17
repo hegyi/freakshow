@@ -1,0 +1,26 @@
+<h1>Listing Mutants</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Team</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mutants.each do |mutant| %>
+      <tr>
+        <td><%= mutant.name %></td>
+        <td><%= mutant.team.name %></td>
+        <td><%= link_to 'Edit', edit_mutant_path(mutant) %></td>
+        <td><%= link_to 'Destroy', mutant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mutant', new_mutant_path %>

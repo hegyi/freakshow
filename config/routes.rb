@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'visitors#index'
+  resources :tasks, except: [:show]
+  resources :mutants, except: [:show]
+  resources :teams, except: [:show]
+  root to: 'tasks#index'
 end
